@@ -20,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    // Checking of errors
+    // Checking of errors. Still has error
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
