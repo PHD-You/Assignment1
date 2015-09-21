@@ -20,6 +20,8 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    // Checking of errors
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
