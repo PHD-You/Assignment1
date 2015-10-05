@@ -38,7 +38,6 @@ public class StatList {
     final static ArrayList<Long> clear = new ArrayList<>();
 
     //Computes basic function on Arraylist
-    public ArrayList getStat(){return statslist;}
 
     public void addStats(long stat){statslist.add(stat);}
 
