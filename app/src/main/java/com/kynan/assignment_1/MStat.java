@@ -118,8 +118,6 @@ public class MStat {
             //e.printStackTrace();
             throw new RuntimeException(e);
         }
-        System.out.println(multiResult);
-        System.out.println("HELLO");
     }//end loadinfile
 
     public static void saveInFile(Context context) {
