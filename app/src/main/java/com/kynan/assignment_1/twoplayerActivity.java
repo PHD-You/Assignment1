@@ -16,7 +16,6 @@ limitations under the License.
 package com.kynan.assignment_1;
 
 import android.app.ActionBar;
-import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,20 +27,19 @@ import android.widget.TextView;
 public class twoplayerActivity extends ActionBarActivity {
 
     private static MultiControl mc = new MultiControl();
-    private static GameController gc = new GameController();
-    private Handler handle = new Handler();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_twoplayer);
         //Set Text for buttons
+        MStat.loadFromFile(this);
         Button self = (Button) findViewById(R.id.play1);
-        Button self2 = (Button) findViewById(R.id.play1);
+        Button self2 = (Button) findViewById(R.id.play2);
         self.setText(mc.getplayer1());
         self2.setText(mc.getplayer2());
         mc.setCurrentplayers(2);
-        MStat.loadFromFile(this);
     }//end onCreate
 
 
@@ -57,7 +55,7 @@ public class twoplayerActivity extends ActionBarActivity {
     public void player1(View v){
         mc.saveResult(mc.getCurrentplayers(), 1);
         MStat.saveInFile(this);
-        popMessage("Player 2 wins!");
+        popMessage("Player 1 wins!");
     }//end player1
 
 

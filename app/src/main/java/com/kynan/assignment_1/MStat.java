@@ -31,7 +31,6 @@ import java.util.ArrayList;
 public class MStat {
 
     private static ArrayList<Integer> multiResult = new ArrayList<Integer>(9);
-    final static ArrayList<Integer> clear = new ArrayList<>();
     private static final String FILENAME = "Multi.sav";
 
     //String use to set stat
@@ -54,9 +53,6 @@ public class MStat {
         //Elements 5,6,7,8 are for 4 players win (1st player = element 5, etc)
         for (int i = 0; i < 9; i++) {
             multiResult.add(0);
-        }
-        for (int i = 0; i < 9; i++) {
-            clear.add(0);
         }
     }
 
@@ -98,6 +94,7 @@ public class MStat {
     public static void loadFromFile(Context context) {
         //Code taken from lonelytwitter project done in lab and edited to take Arraylist<Integers>
         //ArrayList<String> tweets = new ArrayList<String>();
+
         try {
             FileInputStream fis = context.openFileInput(FILENAME);
             BufferedReader in = new BufferedReader(new InputStreamReader(fis));
@@ -106,25 +103,23 @@ public class MStat {
             Type player2 = new TypeToken<ArrayList<Integer>>() {
             }.getType();
             multiResult = gson.fromJson(in, player2);
-            System.out.println("load");
-            System.out.println(multiResult);
-            //String line = in.readLine();
-            //while (line != null) {
-            //	tweets.add(line);
-            //	line = in.readLine();
-            //}
+
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             //e.printStackTrace();
             //throw new RuntimeException(e);
             multiResult = new ArrayList<Integer>(9);
+            for (int i = 0; i < 9; i++) {
+                multiResult.add(0);
+            }
         } catch (IOException e) {
             // TODO Auto-generated catch block
             //e.printStackTrace();
             throw new RuntimeException(e);
         }
-        //return tweets.toArray(new String[tweets.size()]);
+        System.out.println(multiResult);
+        System.out.println("HELLO");
     }//end loadinfile
 
     public static void saveInFile(Context context) {
@@ -137,8 +132,6 @@ public class MStat {
             gson.toJson(multiResult, writer);
             writer.flush(); //Tells it to write to file
             fos.close();
-            //fos.write(new String(date.toString() + " | " + text)
-            //		.getBytes())
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -159,11 +152,12 @@ public class MStat {
             //It will start of the file, aka, it will delete the context and then write new stuff
             OutputStreamWriter writer = new OutputStreamWriter(fos);
             Gson gson = new Gson();
-            gson.toJson(clear, writer);
+            for (int i = 0; i < 9; i++){
+                multiResult.set(i, 0);
+            }
+            gson.toJson(multiResult, writer);
             writer.flush(); //Tells it to write to file
             fos.close();
-            //fos.write(new String(date.toString() + " | " + text)
-            //		.getBytes())
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block

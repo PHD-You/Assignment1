@@ -23,10 +23,10 @@
         android:layout_width="353dp"
         android:layout_height="225dp"
         android:text="Player 2"
-        android:id="@+id/play1"
+        android:id="@+id/play2"
         android:onClick="player2"
         android:textSize="50dp"
-        android:rotation="180"
+        android:rotation="0"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true" />
 

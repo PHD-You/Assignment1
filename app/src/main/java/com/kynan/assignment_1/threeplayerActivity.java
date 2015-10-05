@@ -16,7 +16,6 @@ limitations under the License.
 package com.kynan.assignment_1;
 
 import android.app.ActionBar;
-import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -28,8 +27,6 @@ import android.widget.TextView;
 public class threeplayerActivity extends ActionBarActivity {
 
     private static MultiControl mc = new MultiControl();
-    private static GameController gc = new GameController();
-    private Handler handle = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +34,7 @@ public class threeplayerActivity extends ActionBarActivity {
         //Set Text for buttons
         setContentView(R.layout.activity_threeplayer);
         Button self = (Button) findViewById(R.id.play1);
-        Button self2 = (Button) findViewById(R.id.play1);
+        Button self2 = (Button) findViewById(R.id.play2);
         Button self3 = (Button) findViewById(R.id.play3);
         self.setText(mc.getplayer1());
         self2.setText(mc.getplayer2());

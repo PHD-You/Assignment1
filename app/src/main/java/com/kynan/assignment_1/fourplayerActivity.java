@@ -37,7 +37,7 @@ public class fourplayerActivity extends ActionBarActivity {
         setContentView(R.layout.activity_fourplayer);
         //Set Text for buttons
         Button self = (Button) findViewById(R.id.play1);
-        Button self2 = (Button) findViewById(R.id.play1);
+        Button self2 = (Button) findViewById(R.id.play2);
         Button self3 = (Button) findViewById(R.id.play3);
         Button self4 = (Button) findViewById(R.id.play4);
         self.setText(mc.getplayer1());

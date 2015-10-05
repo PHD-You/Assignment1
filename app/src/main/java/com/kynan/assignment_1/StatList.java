@@ -52,7 +52,7 @@ public class StatList {
             return -1;
         }
         return statslist.size();
-    }
+    }//end getcount
 
     public boolean isEmpty(){
         //Checks if array is empty
@@ -60,7 +60,7 @@ public class StatList {
             return true;
         }
         return false;
-    }
+    }//end is empty
 
     private static final String FILENAME = "file.sav";
 
@@ -76,11 +76,7 @@ public class StatList {
             statslist = gson.fromJson(in,player2);
             System.out.println("load");
             System.out.println(statslist);
-            //String line = in.readLine();
-            //while (line != null) {
-            //	tweets.add(line);
-            //	line = in.readLine();
-            //}
+
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -92,7 +88,7 @@ public class StatList {
             //e.printStackTrace();
             throw new RuntimeException(e);
         }
-        //return tweets.toArray(new String[tweets.size()]);
+
     }
 
     public static void saveInFile(Context context) {
@@ -105,8 +101,7 @@ public class StatList {
             gson.toJson(statslist, writer);
             writer.flush(); //Tells it to write to file
             fos.close();
-            //fos.write(new String(date.toString() + " | " + text)
-            //		.getBytes())
+
 
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
@@ -118,7 +113,7 @@ public class StatList {
             //e.printStackTrace();
             throw new RuntimeException(e);
         }
-    }
+    }//end Saveinfile
 
     public static void clearFile(Context context) {
         //Code taken from lonelytwitter project done in lab and edited to take Arraylist<Long>
@@ -144,5 +139,5 @@ public class StatList {
             //e.printStackTrace();
             throw new RuntimeException(e);
         }
-    }
+    }//end clearfile
 }

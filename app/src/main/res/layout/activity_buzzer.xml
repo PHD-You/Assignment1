@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3 Players"
-            android:id="@+id/play3"
+            android:id="@+id/play2"
             android:layout_gravity="center_horizontal"
             android:textSize="50dp"
             android:onClick="play3" />

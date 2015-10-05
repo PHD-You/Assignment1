@@ -31,6 +31,12 @@ public class mstatActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mstat);
         MStat.loadFromFile(this);
+        //Set default view to 2 player buzzer
+        TextView result = (TextView) findViewById(R.id.multiResult);
+        TextView resultTitle = (TextView) findViewById(R.id.MTitle);
+        resultTitle.setText("2 Player");
+        result.setText(mc.getbuzz1() + "\n" + String.valueOf(mc.getResult().findResult(0) + "\n")
+                + mc.getbuzz2() + "\n" + String.valueOf(mc.getResult().findResult(1) + "\n"));
     }//end onCreate
 
     public void p2(View v){
@@ -65,6 +71,12 @@ public class mstatActivity extends ActionBarActivity {
 
     public void clear (View v){
         //clear stat
-        MStat.clearFile(this);}
+        MStat.clearFile(this);
+        //Set default view to 2 player buzzer
+        TextView result = (TextView) findViewById(R.id.multiResult);
+        TextView resultTitle = (TextView) findViewById(R.id.MTitle);
+        resultTitle.setText("2 Player");
+        result.setText(mc.getbuzz1() + "\n" + String.valueOf(mc.getResult().findResult(0) + "\n")
+                + mc.getbuzz2() + "\n" + String.valueOf(mc.getResult().findResult(1) + "\n"));}
 
 }//end mstatActivity
