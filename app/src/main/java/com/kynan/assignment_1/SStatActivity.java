@@ -129,6 +129,13 @@ public class SStatActivity extends ActionBarActivity {
 
     public void clear(View v){
         StatList.clearFile(this);
+        StatList.loadFromFile(this);
+        reCalMode = 0;
+        currentcount = cal.Count();;
+        currentVal = reCal(reCalMode);
+        currenttype = cal.all;
+        currentmode = cal.avg;
+        updatetext(currenttype, currentmode, currentVal);
     }//end clear
 
 
